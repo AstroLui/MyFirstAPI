@@ -1,4 +1,4 @@
-#My First API
+# My First API
 ----
 Pasos que se deben de seguir para correr la `Page` de la API
 * ### Paso 1:
@@ -28,9 +28,9 @@ Pasos que se deben de seguir para correr la `Page` de la API
     ```
     Luego el `Uvicorn`
     ```
-        pip install uvicorn
+        pip install "uvicorn[standard]"
     ```
-
+    Para una infromacion mas detalla de `FastAPI`, ingresen aqui: [FastAPI](https://fastapi.tiangolo.com/)
 * ### Paso 4:
     Despues de haber instalado el `FastAPI` y `Uvicorn` en la terminal colocaran lo siguiente:
     ```
