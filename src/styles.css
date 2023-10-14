@@ -1,4 +1,7 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+*, *::after, *::before{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,13 +9,88 @@
 
 body{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 98vh;
-    background-color: black;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(230, 230, 229, 0.9);
 }
-
-.Wrapper{
-    font-size: 150px;
-    color: white;
+.Astro-Nav{
+    width: auto;
+    height:  90px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+.Astro-Nav span{
+    font-size: 45px;
+    font-family: 'Cutive Mono', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-left: 25px; 
+}
+.Astro-Content{
+    display: flex;
+    width: auto;
+    height: 90vh;
+    padding: 20px;
+}
+.Content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 300vw;
+    height: auto;
+    border-right: 2px solid lightgrey;
+    padding-top: 10px;
+}
+.Content:nth-child(4){
+    border-right: none;
+}
+.Title, .Content-Text{
+    font-family: 'Quicksand', sans-serif;
+}
+.Title{
+    padding: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+.Button{
+    width: 150px;
+    height: 150px;
+    background-size: 100px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    border: 2px solid lightgrey;
+    transition: border 0.5s ease;
+}
+.Button:hover{
+    border-color: gray;
+}
+.Button.one{
+    background-image: url('./icons/cosine.png');
+}
+.Button.two{
+    background-image: url('./icons/equation.png');
+    background-size: 130px;
+}
+.Button.three{
+    background-image: url('./icons/calculus.png');
+}
+.Button.four{
+    background-image: url('./icons/integral.png');
+}
+.Content-Text{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 20vw;
+    height: 50vh;
+    font-size: 20px;
+}
+.Content-Text p{
+    color: rgb(70, 69, 69);
 }
