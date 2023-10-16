@@ -14,9 +14,10 @@
     width: 45vw;
     height: 75vh;
     border-radius: 30px;
+    box-shadow: -10px 10px 20px rgba(3, 27, 30, 0.35);
 }
 .Astro-Form{
-    background-color: rgb(199, 194, 194);
+    background-color: rgb(216, 211, 211);
 }
 .Astro-Result{
     background-color: white;
