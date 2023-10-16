@@ -12,10 +12,3 @@ a, b= np.polyfit(x, y, 1)
 #Obtenemos los puntos para graficar la recta aprox
 puntos = a * x + b
 
-#Imprimimos los puntos originales y la recta
-plt.scatter(x, y, color='green')
-plt.plot(x, puntos, color='red')
-plt.title('Ajuste de mínimos cuadrados de una recta')
-plt.xlabel('x')
-plt.ylabel('y')
-plt.show()
