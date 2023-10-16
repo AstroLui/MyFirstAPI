@@ -6,7 +6,8 @@ origins=[
     "http://localhost:3000",
     "http://localhost",
     "http://127.0.0.1",
-    "http://127.0.0.1:3000"
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:3000/src/pages/"
 ]
 
 app.add_middleware(
@@ -16,3 +17,12 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/apro-fun")
+async def Prueba():
+    x=[1, 2, 3, 4]
+    return {
+        "Problema": {
+            "Enunciado": x
+        }
+    }
