@@ -1,0 +1,23 @@
+.Astro-Nav a{
+    margin-left: 8.7vw;
+}
+.Astro-Nav span:nth-child(2){
+    width: 50vw;
+    font-size: 25px;
+}
+.Astro-Content{
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.Astro-Form, .Astro-Result{
+    width: 45vw;
+    height: 75vh;
+    border-radius: 30px;
+}
+.Astro-Form{
+    background-color: rgb(199, 194, 194);
+}
+.Astro-Result{
+    background-color: white;
+}
