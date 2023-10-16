@@ -11,14 +11,32 @@
     justify-content: center;
 }
 .Astro-Form, .Astro-Result{
+    display: flex;
+    flex-direction: column;
     width: 45vw;
     height: 75vh;
     border-radius: 30px;
     box-shadow: -10px 10px 20px rgba(3, 27, 30, 0.35);
+    padding: 10px; 
+    gap: 15px
 }
 .Astro-Form{
     background-color: rgb(216, 211, 211);
 }
+.Astro-Form span{
+    font-size: 1.8rem;
+    margin-left: 20px;
+    font-family: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
+}
+.Astro-Result span{
+    font-size: 1.8rem;
+    margin-left: 20px;
+    font-family: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
+    color: gray
+}
 .Astro-Result{
     background-color: white;
+}
+.Form-Content span{
+    font-size: 1.4rem;
 }
