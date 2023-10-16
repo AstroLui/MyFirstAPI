@@ -40,3 +40,12 @@ Pasos que se deben de seguir para correr la `Page` de la API
 
 ## RECORDATORIO:
 Abrir el `index.html` con la extension de VS Code `LiveServer` o `LivePreview`
+## Instalacion de Requerimientos
+```
+    pip install -r requirements.txt
+```
+
+```
+    pip freeze > requirements.txt
+```
+
