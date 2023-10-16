@@ -29,6 +29,26 @@ body{
     font-weight: bold;
     margin-left: 25px; 
 }
+.Astro-Nav a{
+    font-size:  20px;
+    font-weight: bold;
+    font-family: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    margin-left: 60vw;
+    padding: 10px;
+    transition: border 0.5s ease;
+}
+.Astro-Nav a:hover{
+    border-color: gray;
+}
+.Astro-Nav a:visited{
+    color: gray
+}
+.Astro-Nav a:link{
+    color: black;
+}
 .Astro-Content{
     display: flex;
     width: auto;
