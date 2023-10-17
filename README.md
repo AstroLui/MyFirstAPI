@@ -34,18 +34,22 @@ Pasos que se deben de seguir para correr la `Page` de la API
 * ### Paso 4:
     Despues de haber instalado el `FastAPI` y `Uvicorn` en la terminal colocaran lo siguiente:
     ```
-        uvicorn --app-dir backend main:app --reload
+        uvicorn --app-dir backend main:app --reload 
     ```
     y despues abris el `index.html`, eso es todo.
 
-## RECORDATORIO:
-Abrir el `index.html` con la extension de VS Code `LiveServer` o `LivePreview`
 ## Instalacion de Requerimientos
+Para realizar la instalacion de los requirimientos necesarios colocar en una nueva terminal 
 ```
     pip install -r requirements.txt
 ```
-
+Si realizan alguna instalacion nueva para actualizar el archivo requirements.txt colocar 
+este comando
 ```
     pip freeze > requirements.txt
 ```
+
+## RECORDATORIO:
+Abrir el `index.html` con la extension de VS Code `LiveServer` o `LivePreview`
+
 
