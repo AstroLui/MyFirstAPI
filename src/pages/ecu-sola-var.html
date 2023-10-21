@@ -15,8 +15,26 @@
     </nav>
     <main class="Astro-Content Cal">
         <div class="Astro-Form">
-            <span class="Form-Title">Calcular</span>
-            <div class="Form-Content"></div>
+            <span class="Form-Title">Ingreso</span>
+            <div class="Form-Content">
+                <p>Ingrese valores en los campos requeridos con su signo 
+                    que seran el coeficiente de la X, en caso de ser omitido
+                    se tomaran como 1. 
+                </p>
+            </div>
+
+            <div id="funcion">
+                <div id="infuncion">
+                    <div id="frag"><input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/><span id="variable">X</span></div>
+                </div> 
+                <div id="buttons" class="buttons">
+                    <button type="button" id="plus" onclick="Add_Plus()">+</button>
+                    <button type="button" id= "minus" onclick="Delete_Minus()">-</button>
+                </div>
+            </div>
+            <div class="Form-Calcular">
+                <button id="B-Calcular" class="B-Calcular" onclick="Calcular()">Calcular</button> 
+            </div>
         </div>
         <div class="Astro-Result">
             <span class="Result-Title">Resultado</span>
