@@ -26,6 +26,15 @@ for i in range(n):
     y[i+1] = y[i] + h*f(t[i], y[i])
     t[i+1] = t[i] + h
 
+def calcEDO(ti,yi,size, steps):
+    t = np.zeros(steps+1)
+    y = np.zeros(steps+1)
+    t[0] = ti
+    y[0] = yi
+    for i in range(steps):
+        y[i+1] = y[i] + size*f(t[i], y[i])
+        t[i+1] = t[i] + size
+
 # Plot the results
 plt.plot(t, y, 'b')
 plt.xlabel('t')
