@@ -22,9 +22,13 @@
 }
 .Astro-Form{
     background-color: rgb(216, 211, 211);
+    padding: 1.5rem; 
+    font-size: 1.35rem; 
+    font-family: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
 }
-.Astro-Form span{
+.Astro-Form > span{
     font-size: 1.8rem;
+    padding: 0; 
     margin-left: 20px;
     font-family: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -39,4 +43,74 @@
 }
 .Form-Content span{
     font-size: 1.4rem;
+}
+.Form-Calcular{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.B-Calcular{
+    width: 10vw;
+    height: 5vh;
+    font-family: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    border: 2px solid gray;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s ease, border 0.4s ease;
+}
+.B-Calcular:hover{
+    border-color: black;
+}
+
+/* CSS para Ecuaciones de una sola Variables */
+#funcion{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    gap: 1px; 
+}
+#funcion div{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; 
+}
+.coeficiente{ 
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    background-color: rgb(216, 211, 211);
+    border: 2px solid gray;
+    color: gray;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border 0.2s ease-in-out;
+}
+.coeficiente:hover{
+    border-color: rgb(31, 30, 30);
+}
+#infuncion div:last-child #variable::after{
+    content: ' = 0';
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    height: auto;
+    align-items: center;
+    gap: 1px;
+}
+.buttons button { 
+    font-size: 1.2rem;
+    width: 25px;
+    background-color: rgb(216, 211, 211);
+    border: 2px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border 0.5s ease;
+}
+.buttons button:hover{
+    border-color: rgb(31, 30, 30);
 }
