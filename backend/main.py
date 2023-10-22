@@ -1,5 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, Form
 from fastapi.middleware.cors import CORSMiddleware
+
+from aproximación import *
 
 app = FastAPI()
 origins=[
@@ -7,7 +9,7 @@ origins=[
     "http://localhost",
     "http://127.0.0.1",
     "http://127.0.0.1:3000",
-    "http://127.0.0.1:3000/src/pages/"
+    "http://127.0.0.1:3000/src/pages/apro-fun.html"
 ]
 
 app.add_middleware(
@@ -18,7 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/apro-fun")
+@app.get("/")
 async def Prueba():
     x=[1, 2, 3, 4]
     return {
@@ -26,3 +28,15 @@ async def Prueba():
             "Enunciado": x
         }
     }
+@app.post("/solucion")
+async def A_Post(request: Request):
+    data = await request.json()
+    Array_X = data[0]["X"]
+    Array_Y = data[0]["Y"]
+    opcion = data[0]["opcion"]
+    if opcion == "Recta": 
+        recta(np.array(Array_X), np.array(Array_Y))
+    else:
+        parabola(np.array(Array_X),np.array(Array_Y))
+    return 
+    
