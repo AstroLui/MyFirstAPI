@@ -321,3 +321,53 @@
 #InFuncion div:last-child #variable_Integral::after{
     content: ' dx'
 }
+/* CSS para Ecuaciones Diferenciales */
+#Ecuacion{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 35px 1px 35px 1px;
+}
+#Ecuacion::after{
+    margin-top: 2px;
+    content: ' = 0';
+}
+#Ecuacion #Inter{
+    display: flex;
+    height: 30px;
+    align-items: center;
+}
+#Funcion-X, #Funcion-Y{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+#InFuncion-X, #InFuncion-Y{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+#InFuncion-X div, #InFuncion-Y div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+#InFuncion-X::before{
+    content: '( ';
+}
+#InFuncion-X::after{
+    content: ' )dx';
+}
+#InFuncion-Y::before{
+    content: '( ';
+}
+#InFuncion-Y::after{
+    content: ' )dy';
+}
+.buttons.R{
+    flex-direction: row;
+    gap: 5px
+}
