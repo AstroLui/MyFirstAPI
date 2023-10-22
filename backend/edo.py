@@ -40,14 +40,18 @@ n=10
 #usar sus valores en la aproximación con el método de euler
 #t es la variable independiente, y es la variable dependiente, el resto son los coeficientes
 
-def f(t, y, x2, x1, x0, y2, y1, y0):
-    return -(x2*(t**2)+x1*t+x0)/(y2*(y**2)+y1*y+y0)
+#Por cuestiones de practicidad restrigimos los grados de los polinomios a primer grado, pero por ejemplo para 
+#polinomios de 2do grado o mas, habria agregar el coeficiente y sumar la respectiva multiplicación del coef con su
+#variable elevada al exponente del grado correspondiente: x3*(t**3) + x2*(t**2) ... x0
+
+def f(t, y, x1, x0, y1, y0):
+    return -(x1*t+x0)/(y1*y+y0)
 
 #ti yi definen las condiciones iniciales
 #size define el tamaño de los pasos y steps define el número de pasos en el método,
 #Escoger valores más pequeños de size hará que los resultados sean más precisos y que
 #el tiempo de cómputo sea mayor
-def calcEDO(ti,yi,size, steps, x2, x1, x0, y2, y1, y0):
+def calcEDO(ti,yi,size, steps, x1, x0, y1, y0):
     # Inicializar arreglos en cero para t, y
     t = np.zeros(steps+1)
     y = np.zeros(steps+1)
@@ -56,7 +60,7 @@ def calcEDO(ti,yi,size, steps, x2, x1, x0, y2, y1, y0):
     y[0] = yi
     #Usar el método de Euler para calcular el resto de valores de t, y
     for i in range(steps):
-        y[i+1] = y[i] + size*f(t[i], y[i],x2, x1, x0, y2, y1, y0)
+        y[i+1] = y[i] + size*f(t[i], y[i], x1, x0, y1, y0)
         t[i+1] = t[i] + size
     
     #Mostrar los resultados
@@ -66,4 +70,4 @@ def calcEDO(ti,yi,size, steps, x2, x1, x0, y2, y1, y0):
     plt.title('Euler Method')
     plt.show()
 
-calcEDO(0.5, 0.125, 0.2, 5, 0, 1, 0, 0, 0, -1)
+calcEDO(0.5, 0.125, 0.2, 5, 1, 0, 0, -1)
