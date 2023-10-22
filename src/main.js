@@ -112,3 +112,42 @@ function I_Delete_Minus(){
         I_global_X = I_global_X - 1
     }
 }
+// JS para Ecuaciones Diferenciales
+var E_global_X = 1
+var E_global_Y = 1
+function __E_Plus(sup, vari){
+    const old = document.getElementById(`InFuncion-${vari}`).innerHTML
+    document.getElementById(`InFuncion-${vari}`).innerHTML = `
+    <div id="frag">
+        <input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/><span id="variable_Ecuacion">${vari} <sup>${sup}</sup> + </span>
+    </div>
+    ${old}`
+}
+function E_Add_Plus_X(){
+    if(E_global_X < 2){
+        E_global_X = E_global_X + 1
+        __E_Plus(E_global_X, 'X')
+    }
+}
+function E_Add_Plus_Y(){
+    if(E_global_Y < 2){ 
+        E_global_Y = E_global_Y + 1
+        __E_Plus(E_global_Y, 'Y')
+    }
+}
+function __E_Minus(vari){
+    const __Minus = document.getElementById(`InFuncion-${vari}`).querySelectorAll("#frag")
+    document.getElementById(`InFuncion-${vari}`).removeChild(__Minus[0])
+}
+function E_Delete_Minus_X(){
+    if(E_global_X != 1){
+        __E_Minus('X')
+        E_global_X = E_global_X - 1
+    }
+}
+function E_Delete_Minus_Y(){
+    if(E_global_Y != 1){
+        __E_Minus('Y')
+        E_global_Y = E_global_Y - 1
+    }
+}
