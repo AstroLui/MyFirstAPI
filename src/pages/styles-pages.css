@@ -32,14 +32,15 @@
     margin-left: 20px;
     font-family: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
 }
+.Astro-Result{
+    background-color: white;
+    padding: 1.5rem; 
+}
 .Astro-Result span{
     font-size: 1.8rem;
     margin-left: 20px;
     font-family: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
     color: gray
-}
-.Astro-Result{
-    background-color: white;
 }
 .Form-Content span{
     font-size: 1.4rem;
