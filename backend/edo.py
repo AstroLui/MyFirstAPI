@@ -36,7 +36,7 @@ n=10
 
 
 
-#Define la ecuacion diferencial ordinaria de primer orden, la función f despeja dy para poder
+#Define la ecuacion diferencial ordinaria de primer orden con dy despejada, la función f despeja dy para poder
 #usar sus valores en la aproximación con el método de euler
 #t es la variable independiente, y es la variable dependiente, el resto son los coeficientes
 
