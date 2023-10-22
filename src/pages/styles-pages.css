@@ -166,7 +166,7 @@
     justify-content: center;
     align-items: center;
     width: 20vw;
-    height: 25vh;
+    height: 40vh;
     background-color: white;
     border-radius: 20px;
 }
@@ -183,7 +183,7 @@
     justify-content: center;
     gap: 10px
 }
-#inputs{
+#inputs-X, #inputs-Y{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -191,21 +191,21 @@
     height: 4vh;
     border: 3px solid lightgray;
 }
-#inputs > input{
+#inputs-X > input, #inputs-Y > input{
     text-align: center;
     font-family: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.1rem;
     width: 50px;
     border: none;
 }
-#X #inputs, #Y #inputs{
+#X #inputs-X, #Y #inputs-Y{
     border-left: none;
     border-bottom: none;
 }
-#X #inputs:last-child, #Y #inputs:last-child{
+#X #inputs-X:last-child, #Y #inputs-Y:last-child{
     border-bottom: 3px solid lightgray;
 }
-#Y #inputs{
+#Y #inputs-Y{
     border-right: none;
 }
 #inX button, #inY button{
