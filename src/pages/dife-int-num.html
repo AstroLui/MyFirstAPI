@@ -16,7 +16,31 @@
     <main class="Astro-Content Cal">
         <div class="Astro-Form">
             <span class="Form-Title">Ingreso</span>
-            <div class="Form-Content"></div>
+            <div class="Form-Content">
+                <p>Ingrese una funcion en el campo requerido para la resolucion de la integral. Si se omite
+                    el ingreso de valores en los limites de la integral se tomara de 0 a 1 y para el caso de
+                    la coeficientes de X se tomara 1
+                </p>
+            </div>
+            <div id="Astro-Funcion">
+                <div id="Limite">
+                    <div><input type="number" placeholder="1"/></div>
+                    <div><input type="number" placeholder="0"/></div>
+                    <span>∫</span>
+                </div>
+                <div id="Funciones">
+                    <div id="InFuncion">
+                        <div id="frag"><input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/><span id="variable_Integral">X</span></div>
+                    </div>
+                </div>
+                <div id="buttons" class="buttons">
+                    <button type="button" id="plus" onclick="I_Add_Plus()">+</button>
+                    <button type="button" id= "minus" onclick="I_Delete_Minus()">-</button>
+                </div>
+            </div>
+            <div class="Form-Calcular">
+                <button id="B-Calcular" class="B-Calcular" onclick="Calcular()">Calcular</button> 
+            </div>
         </div>
         <div class="Astro-Result">
             <span class="Result-Title">Resultado</span>
