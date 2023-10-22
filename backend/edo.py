@@ -1,24 +1,61 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-#Define la ecuacion diferencial
-def f(t, y):
-    return y - t**2 + 1
+"""
+El método de Euler es un procedimiento numérico de primer orden para resolver ecuaciones diferenciales ordinarias de
+primer orden, siempre que se conozca su condición inicial. La idea del método es encontrar una solución
+numérica a la ecuación diferencial en el intervalo comprendido entre un x0 y un Xf.
+En primer lugar, se discretiza el intervalo en n+1 puntos: x0, x1, x2, x3…, xn.
+Luego, se hace una predicción aproximada del valor de la función y(x) en el punto siguiente.
+El procedimiento se repite para obtener los sucesivos puntos.
+
+ejemplos:
+dy/dx = -1
+el resultado de esta ecuación diferencial es la integral de -1, por lo que da y=-x
+y(0) = 0
+h= 0.5
+n=2
+por ende el intervalo es [0,1]
+
+dy/dx = 1
+y=x
+y(0) = 0
+h=0.2
+n = 5
+[0,1]
+
+dy/dx = x
+y= x^2/2
+y(0.5) = 0.125
+h= 0.1
+n=10
+[0,1]
+
+
+"""
+
+
+
+#Define la ecuacion diferencial ordinaria de primer orden usando la función f
+#t es la variable independiente, y es la variable dependiente, el resto son los coeficientes
+
+def f(t, y, x2, x1, x0, y2, y1, y0):
+    return -(x2*(t**2)+x1*t+x0)/(y2*(y**2)+y1*y+y0)
 
 #ti yi definen las condiciones iniciales
-#size define el tamaño de los pasos y steps define el número de pasos,
+#size define el tamaño de los pasos y steps define el número de pasos en el método,
 #Escoger valores más pequeños de size hará que los resultados sean más precisos y que
 #el tiempo de cómputo sea mayor
-def calcEDO(ti,yi,size, steps):
+def calcEDO(ti,yi,size, steps, x2, x1, x0, y2, y1, y0):
     # Inicializar arreglos en cero para t, y
     t = np.zeros(steps+1)
     y = np.zeros(steps+1)
-    # Colocar los valores iniciales
+    # Colocar los valores iniciales de t, y
     t[0] = ti
     y[0] = yi
-    #Usar el método de Euler para resolver la ecuación diferencial
+    #Usar el método de Euler para calcular el resto de valores de t, y
     for i in range(steps):
-        y[i+1] = y[i] + size*f(t[i], y[i])
+        y[i+1] = y[i] + size*f(t[i], y[i],x2, x1, x0, y2, y1, y0)
         t[i+1] = t[i] + size
     
     #Mostrar los resultados
@@ -28,4 +65,4 @@ def calcEDO(ti,yi,size, steps):
     plt.title('Euler Method')
     plt.show()
 
-calcEDO(0, 0.5, 0.1, 10)
+calcEDO(0.5, 0.125, 0.2, 5, 0, 1, 0, 0, 0, -1)
