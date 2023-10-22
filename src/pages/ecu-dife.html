@@ -16,7 +16,44 @@
     <main class="Astro-Content Cal">
         <div class="Astro-Form">
             <span class="Form-Title">Ingreso</span>
-            <div class="Form-Content"></div>
+            <div class="Form-Content">
+                <p>Ingrese valores en los campos requeridos que representan los coeficientes
+                    de X, Y y el valor de termino independiente. En caso de ser omitido se tomaran como
+                    valor 1 para cada uno
+                </p>
+            </div>
+            <div id="Ecuacion">
+                <div id="Funcion-X">
+                    <div id="InFuncion-X">
+                        <div id="frag">
+                            <input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/><span id="variable_Ecuacion">X</span>
+                            <span> + </span>
+                            <input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/>
+                        </div>
+                    </div>
+                    <div id="buttons" class="buttons R">
+                        <button type="button" id="plus" onclick="E_Add_Plus_X()">+</button>
+                        <button type="button" id= "minus" onclick="E_Delete_Minus_X()">-</button>
+                    </div>
+                </div>
+                <span id="Inter">+</span>
+                <div id="Funcion-Y">
+                    <div id="InFuncion-Y">
+                        <div id="frag">
+                            <input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/><span id="variable_Ecuacion">Y</span>
+                            <span> + </span>
+                            <input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/>
+                        </div>
+                    </div>
+                    <div id="buttons" class="buttons R">
+                        <button type="button" id="plus" onclick="E_Add_Plus_Y()">+</button>
+                        <button type="button" id= "minus" onclick="E_Delete_Minus_Y()">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="Form-Calcular">
+                <button id="B-Calcular" class="B-Calcular" onclick="Calcular()">Calcular</button> 
+            </div>
         </div>
         <div class="Astro-Result">
             <span class="Result-Title">Resultado</span>
