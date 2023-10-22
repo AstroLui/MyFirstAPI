@@ -1,35 +1,73 @@
 // JS para Aproximacion de funciones
-var global_XY = 2
+var global_XY = 5
+function __Post(global_Array_X, global_Array_Y){
+    document.querySelectorAll('#inputs-X').forEach(input =>{
+        if(input.querySelector('input').value == ''){
+            global_Array_X.push(parseInt(input.querySelector('input').placeholder))
+        }else{
+            global_Array_X.push(parseInt(input.querySelector('input').value))
+        }
+    })
+    document.querySelectorAll('#inputs-Y').forEach(input =>{
+        if(input.querySelector('input').value == ''){
+            global_Array_Y.push(parseInt(input.querySelector('input').placeholder))
+        }else{
+            global_Array_Y.push(parseInt(input.querySelector('input').value))
+        }
+    })
+
+}
+async function A_PostFetch(){
+    const global_Array_X = []
+    const global_Array_Y = []
+    const opcion= document.getElementById('Title-Select').innerText;
+    __Post(global_Array_X, global_Array_Y)
+    const JSON_Request = [
+        {
+            "X": global_Array_X,
+            "Y": global_Array_Y,
+            "opcion": opcion
+        }
+    ];
+    let response = await fetch('http://127.0.0.1:8000/solucion', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+        body: JSON.stringify(JSON_Request)
+    });
+    let resutl = await response.json()
+}
 function __A_Plus(){
     const old_X = document.getElementById('X').innerHTML
     const old_Y = document.getElementById('Y').innerHTML
     document.getElementById('X').innerHTML = `
     ${old_X}
-    <div id="inputs">
+    <div id="inputs-X">
         <input type="number" placeholder="1"/>
     </div>
     `
     document.getElementById('Y').innerHTML = `
     ${old_Y}
-    <div id="inputs">
+    <div id="inputs-Y">
         <input type="number" placeholder="1"/>
     </div>
     `
 }
 function A_Add_Plus(){
-    if(global_XY < 4){
+    if(global_XY < 8){
         global_XY = global_XY + 1
         __A_Plus()
     }
 }
 function __A_Minus(){
-    const A_Minus_X = document.getElementById('X').querySelectorAll('#inputs') 
-    const A_Minus_Y = document.getElementById('Y').querySelectorAll('#inputs')
+    const A_Minus_X = document.getElementById('X').querySelectorAll('#inputs-X') 
+    const A_Minus_Y = document.getElementById('Y').querySelectorAll('#inputs-Y')
     document.getElementById('X').removeChild(A_Minus_X[A_Minus_X.length-1])
     document.getElementById('Y').removeChild(A_Minus_Y[A_Minus_Y.length-1])
 }
 function A_Delete_Minus(){
-    if(global_XY > 2){
+    if(global_XY > 5){
         __A_Minus()
         global_XY = global_XY - 1
     }
