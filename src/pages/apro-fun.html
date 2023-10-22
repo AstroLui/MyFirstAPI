@@ -17,7 +17,48 @@
         <div class="Astro-Form">
             <span class="Form-Title">Ingreso</span>
             <div class="Form-Content">
-                <span class="Ejercicio" id="Ejercicio"></span>
+                <p>Ingrese valores para X y Y en los campos requeridos con su signo
+                    en caso de ser omitido se tomaran esos valores como 1. Tambien seleccione
+                    si quiere que sea una recta o parabola.
+                </p>
+            </div>
+            <div id="Form-Tabla">
+                <nav id="Nav-Select">
+                    <span id="Nav-Select-R" class="S"><span id="Title-Select">Recta<div id="Recta"></div></span><div id="Nav-Select-Op" onclick="Nav_Active()"><div></div><div></div></div></span>
+                    <span id="Nav-Select-P" class="C" onclick="Pass()"><span>Parabola<div id="Parabola"></div></span></span> 
+                </nav>
+                <div id="Tabla">
+                    <span>Tabla</span>
+                    <div id="inTabla">
+                        <div id="inX">
+                            <div id="X">
+                                <span>X</span>
+                                <div id="inputs">
+                                    <input type="number" placeholder="1"/>
+                                </div>
+                                <div id="inputs">
+                                    <input type="number" placeholder="1"/>
+                                </div>
+                            </div>
+                        <button type="button" onclick="A_Add_Plus()">+</button>
+                        </div>
+                        <div id="inY">
+                            <div id="Y">
+                                <span>Y</span>
+                                <div id="inputs">
+                                    <input type="number" placeholder="1"/>
+                                </div>
+                                <div id="inputs">
+                                    <input type="number" placeholder="1"/>
+                                </div>
+                            </div>
+                            <button type="button" onclick="A_Delete_Minus()">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Form-Calcular">
+                <button id="B-Calcular" class="B-Calcular" onclick="Calcular()">Calcular</button> 
             </div>
         </div>
         <div class="Astro-Result">
