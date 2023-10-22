@@ -88,3 +88,27 @@ function Calcular(){
     document.getElementById('B-Calcular').style.backgroundColor= 'gray'
     setTimeout(()=>{document.getElementById('B-Calcular').style.backgroundColor= 'white'}, 200)
 }
+// JS para Diferencion e integracion numerica
+var I_global_X = 1
+function __I_Plus(sup){
+    const old = document.getElementById('InFuncion').innerHTML
+    document.getElementById('InFuncion').innerHTML = `
+    <div id="frag"><input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/><span id="variable_Integral">X <sup>${sup}</sup> + </span></div>
+    ${old}`
+}
+function I_Add_Plus(){
+    if(I_global_X < 4){
+       I_global_X = I_global_X + 1
+        __I_Plus(I_global_X)
+    }
+}
+function __I_Minus(){
+    const __Minus = document.getElementById('InFuncion').querySelectorAll("#frag")
+    document.getElementById('InFuncion').removeChild(__Minus[0])
+}
+function I_Delete_Minus(){
+    if(I_global_X != 1){
+        __I_Minus()
+        I_global_X = I_global_X - 1
+    }
+}
