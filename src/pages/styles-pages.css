@@ -210,7 +210,7 @@
 }
 #inX button, #inY button{
     width: 30px;
-    background-color: lightgray;
+    background-color: rgb(216, 211, 211);
     border: 2px solid gray;
     font-size: 1.2rem;
     cursor: pointer;
@@ -270,4 +270,54 @@
 }
 .buttons button:hover{
     border-color: rgb(31, 30, 30);
+}
+/* CSS para Diferenciacion e integracion numerica */
+#Astro-Funcion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
+    margin: 25px 1px 25px 1px
+}
+#Funciones{
+    margin-top: 10px;
+}
+#Limite{
+    position: relative;
+    font-size: 5rem;
+}
+#Limite div{
+    position: absolute;
+}
+#Limite div input{
+    text-align: center;
+    font-family: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
+    width: 25px;
+    height: 2vh;
+    background-color: rgb(216, 211, 211);
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+#Limite div:first-child{
+    top: -55px;
+    left: 50px;
+}
+#Limite div:nth-child(2){
+    top: 25px;
+    left: 29px
+}
+#InFuncion, #InFuncion div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#InFuncion {
+    gap: 10px
+}
+#InFuncion div{
+    gap: 5px
+}
+#InFuncion div:last-child #variable_Integral::after{
+    content: ' dx'
 }
