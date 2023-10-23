@@ -68,4 +68,6 @@ def calcEDO(ti,yi,size, steps, x1, x0, y1, y0):
     plt.xlabel('t')
     plt.ylabel('y')
     plt.title('Euler Method')
+    root = plt.get_current_fig_manager().window
+    root.geometry("800x500+1000+400")
     plt.show()

@@ -5,6 +5,7 @@ from aproximación import *
 from integrar import *
 from derivar import *
 from edo import calcEDO
+from ecuacion_una_var import *
 
 app = FastAPI()
 origins=[
@@ -58,3 +59,15 @@ async def Ei_Post(request: Request):
     Coe_Y = Y[1]
     calcEDO(X_ini, Y_ini, H, N, Var_X, Coe_X, Var_Y, Coe_Y)
     return data
+
+@app.post("/solucionEcuacionV")
+async def V_Post(request: Request):
+    data = await request.json()
+    coef = data[0]["coeficientes"]
+    exp = data[0]["exponente"]
+    x = Symbol("x")
+    ecuacionGenerada(coef[0],coef[1],coef[2],exp[0],exp[1],exp[2])
+    solucionesResultado(coef[0],coef[1],coef[2],exp[0],exp[1],exp[2],x)
+
+    return data
+    
