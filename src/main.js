@@ -143,33 +143,16 @@ function __I_Post(Array){
 }
 async function I_PostFetch(){
     const Array = []
-    var li_low = '';
-    var li_high = '';
-    if(document.querySelector('#Limite').querySelectorAll('div').item(0).querySelector('input').value == ''){
-        li_low = document.querySelector('#Limite').querySelectorAll('div').item(1).querySelector('input').placeholder
-        li_high = document.querySelector('#Limite').querySelectorAll('div').item(0).querySelector('input').placeholder
-    }else{
-        li_low = document.querySelector('#Limite').querySelectorAll('div').item(1).querySelector('input').value
-        li_high = document.querySelector('#Limite').querySelectorAll('div').item(0).querySelector('input').value
-    }
-    if (li_low > li_high){
-        aux = li_high
-        li_high = li_low
-        li_low = aux
-    }
     __I_Post(Array)
     const JSON_Request = [{
         "funcion" : parseInt(Array.join('+')),
         "grado" : Array.length,
-        "limite_L" : li_low,
-        "limite_H" : li_high
     }];
     const response = await fetch('http://127.0.0.1:8000/solucionIntegral', {
         method: 'POST',
         headers:{'Content-type': 'application/json;charset=utf-8'},
         body: JSON.stringify(JSON_Request)
     })
-
     const result = await response.json()
     console.log(result)
 }
