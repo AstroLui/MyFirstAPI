@@ -20,14 +20,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-async def Prueba():
-    x=[1, 2, 3, 4]
-    return {
-        "Problema": {
-            "Enunciado": x
-        }
-    }
 @app.post("/solucion")
 async def A_Post(request: Request):
     data = await request.json()
