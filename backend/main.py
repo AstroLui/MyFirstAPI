@@ -42,3 +42,8 @@ async def I_Post(request: Request):
     derivar(funcion, grado)
     integrar(funcion, grado)
     return data
+
+@app.post("/solucionEuacionI")
+async def Ei_Post(request: Request): 
+    data = await request.json()
+    return data
