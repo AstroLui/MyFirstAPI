@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from aproximación import *
 from integrar import *
 from derivar import *
+from edo import calcEDO
 
 app = FastAPI()
 origins=[
@@ -39,11 +40,21 @@ async def I_Post(request: Request):
     data = await request.json()
     funcion = data[0]["funcion"]
     grado = data[0]["grado"]
-    derivar(funcion, grado)
-    integrar(funcion, grado)
+    integral(funcion)
     return data
 
 @app.post("/solucionEuacionI")
 async def Ei_Post(request: Request): 
     data = await request.json()
+    X = data[0]["funcion-X"]
+    Y = data[0]["funcion-Y"]
+    X_ini = data[0]["X-inicial"]
+    Y_ini = data[0]["Y-inicial"]
+    N = data[0]["N"]
+    H = data[0]["H"]
+    Var_X = X[0]
+    Coe_X = X[1]
+    Var_Y = Y[0]
+    Coe_Y = Y[1]
+    calcEDO(X_ini, Y_ini, H, N, Var_X, Coe_X, Var_Y, Coe_Y)
     return data

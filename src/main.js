@@ -137,7 +137,7 @@ function __I_Post(Array){
             Array.push(`x**${inputs.length-x}`)
             x = x + 1
         }else{
-            Array.push(`${input.querySelector('input').value}x**${inputs.length-x}`)
+            Array.push(`${input.querySelector('input').value}*x**${inputs.length-x}`)
             x = x + 1
         }
     })
@@ -148,7 +148,7 @@ async function I_PostFetch(){
     setTimeout(()=>{document.getElementById('B-Calcular').style.backgroundColor= 'white'}, 200)
     __I_Post(Array)
     const JSON_Request = [{
-        "funcion" : parseInt(Array.join('+')),
+        "funcion" : Array.join('+'),
         "grado" : Array.length,
     }];
     const response = await fetch('http://127.0.0.1:8000/solucionIntegral', {

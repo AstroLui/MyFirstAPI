@@ -69,5 +69,3 @@ def calcEDO(ti,yi,size, steps, x1, x0, y1, y0):
     plt.ylabel('y')
     plt.title('Euler Method')
     plt.show()
-
-calcEDO(0.5, 0.125, 0.2, 5, 1, 0, 0, -1)

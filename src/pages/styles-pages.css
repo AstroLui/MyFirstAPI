@@ -196,6 +196,7 @@
     font-family: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.1rem;
     width: 50px;
+    color: black;
     border: none;
 }
 #X #inputs-X, #Y #inputs-Y{
@@ -240,7 +241,7 @@
     text-align: center;
     background-color: rgb(216, 211, 211);
     border: 2px solid gray;
-    color: gray;
+    color: black;
     border-radius: 5px;
     cursor: pointer;
     transition: border 0.2s ease-in-out;
