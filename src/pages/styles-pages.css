@@ -272,6 +272,18 @@
 .buttons button:hover{
     border-color: rgb(31, 30, 30);
 }
+.Result-Content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px
+}
+.Result-Content span { 
+    color: black;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
 /* CSS para Diferenciacion e integracion numerica */
 #Astro-Funcion{
     display: flex;

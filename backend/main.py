@@ -66,8 +66,10 @@ async def V_Post(request: Request):
     coef = data[0]["coeficientes"]
     exp = data[0]["exponente"]
     x = Symbol("x")
-    ecuacionGenerada(coef[0],coef[1],coef[2],exp[0],exp[1],exp[2])
-    solucionesResultado(coef[0],coef[1],coef[2],exp[0],exp[1],exp[2],x)
-
-    return data
+    ecuacion = ecuacionGenerada(Termino(x, coef[0]),Termino(x, coef[1]),Termino(x, coef[2]),exp[0],exp[1],exp[2])
+    solucion = solucionesResultado(Termino(x, coef[0]),Termino(x, coef[1]),Termino(x, coef[2]),exp[0],exp[1],exp[2],x)
+    return {
+        "ecuacion" : ecuacion,
+        "solucion" : solucion
+    }
     

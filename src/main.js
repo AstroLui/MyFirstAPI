@@ -102,12 +102,12 @@ function __V_Post(Array, Array2){
     var x = 0
     inputs.forEach(input => {
         if(input.querySelector('input').value == ''){
-            Array.push(`x`)
-            Array2.push('inputs.length-x')
+            Array.push(1)
+            Array2.push(inputs.length-x)
             x = x + 1
         }else{
-            Array.push(`${input.querySelector('input').value}x`)
-            Array2.push('inputs.length-x')
+            Array.push(parseInt(input.querySelector('input').value))
+            Array2.push(inputs.length-x)
             x = x + 1
         }
     })
@@ -116,6 +116,10 @@ function __V_Post(Array, Array2){
 async function V_PostFetch(){
     const Array = []
     const ArrayExp = []
+    document.getElementById('B-Calcular').style.backgroundColor= 'gray'
+    setTimeout(()=>{document.getElementById('B-Calcular').style.backgroundColor= 'white'}, 200)
+    document.getElementById('ecuacion').style.opacity = '0'
+    document.getElementById('solucion').style.opacity = '0'
     __V_Post(Array, ArrayExp)
     const JSON_Request = [{
         "coeficientes" : Array,
@@ -127,11 +131,12 @@ async function V_PostFetch(){
         body: JSON.stringify(JSON_Request)
     })
     const result = await response.json()
-    console.log(result)
-}
-function Calcular(){
-    document.getElementById('B-Calcular').style.backgroundColor= 'gray'
-    setTimeout(()=>{document.getElementById('B-Calcular').style.backgroundColor= 'white'}, 200)
+    setTimeout(()=>{
+        document.getElementById('ecuacion').style.opacity = '1'
+        document.getElementById('solucion').style.opacity = '1'
+        document.getElementById('ecuacion').innerHTML = result["ecuacion"]
+        document.getElementById('solucion').innerHTML = result["solucion"]
+    }, 500)
 }
 // JS para Diferencion e integracion numerica
 var I_global_X = 2
