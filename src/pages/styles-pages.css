@@ -343,6 +343,12 @@
     align-items: center;
     gap: 10px;
 }
+#variables, #invariables{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 #InFuncion-X, #InFuncion-Y{
     display: flex;
     align-items: center;
