@@ -36,4 +36,6 @@ def derivar(valor, i):
     plt.legend(loc='best',fontsize = 16) #para mostrar la leyenda de la derivada y la funcion
     plt.title('Grafica de una funcion y su derivada', fontsize = 16) #titulo de la grafica
     plt.grid() #lineas de la grafica
+    root = plt.get_current_fig_manager().window
+    root.geometry("800x500+1000+400")
     plt.show()
