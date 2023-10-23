@@ -5,15 +5,15 @@ from sympy import *
 import numpy as np
 import matplotlib.pyplot as plt
 
-def integrar(valor):
+def integrar(valor, i):
 
     x, valor = symbols('x y', integer = True) # definir simbolos en sympy de tipo entero
 
     #Definir la funcion (se puede poner la funcion que sea)
-    valor = x**2
+    valor = x**i
 
     #Hace la integral de la funcion
-    resultado = integrate(valor, 0, 5) #funcion y limites de integracion
+    resultado = integrate(valor, x) #funcion y limites de integracion
 
     #Puntos en los que se ven la grafica de la integrsl (limite inferior grafica, limite maximo grafica, cantidad de ptos que tendra la funcion)
     puntos = np.linspace(-10, 10, 20)
@@ -37,4 +37,3 @@ def integrar(valor):
     plt.title('Grafica de una funcion y su integral', fontsize = 16) #titulo de la grafica
     plt.grid() #lineas de la grafica
     plt.show()
-integrar()

@@ -5,12 +5,12 @@ from sympy import *
 import numpy as np
 import matplotlib.pyplot as plt
 
-def derivar(valor):
+def derivar(valor, i):
 
     x, valor = symbols('x y') # definir simbolos en sympy de tipo entero
 
     #Definir la funcion (se puede poner la funcion que sea)
-    valor = x**2
+    valor = x**i
 
     #Hace la integral de la funcion
     integral = integrate(valor, x)
