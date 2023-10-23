@@ -2,6 +2,8 @@ from fastapi import FastAPI, Request, Form
 from fastapi.middleware.cors import CORSMiddleware
 
 from aproximación import *
+from integrar import *
+from derivar import *
 
 app = FastAPI()
 origins=[
@@ -39,4 +41,12 @@ async def A_Post(request: Request):
     else:
         parabola(np.array(Array_X),np.array(Array_Y))
     return 
-    
+
+@app.post("/solucionIntegral")
+async def I_Post(request: Request): 
+    data = await request.json()
+    funcion = data[0]["funcion"]
+    grado = data[0]["grado"]
+    derivar(funcion, grado)
+    integrar(funcion, grado)
+    return data
