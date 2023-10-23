@@ -6,18 +6,12 @@ from sympy import *
 import numpy as np
 import matplotlib.pyplot as plt
 
-def integral(valor, i):
+def integral(valor):
 
     x = symbols('x') # definir simbolos en sympy de tipo entero
 
-    #Definir la funcion (se puede poner la funcion que sea)
-    valor = x**i #(ponle el valor desde el input aqui)
-
-    limite_inf = 0 #si quieres pon los valores desde los inputs
-    limite_sup = 5 #si quieres pon los valores desde los inputs
-
     #Hace la integral definida de la funcion
-    integral_definida = integrate(valor, (x, limite_inf, limite_sup)) #valores dentro de los limites calculados
+    integral_definida = integrate(valor, x) #valores dentro de los limites calculados
     #pasaselo al label
 
     #Puntos en los que se ven la grafica de la integral (limite inferior grafica, limite maximo grafica, cantidad de ptos que tendra la funcion)
