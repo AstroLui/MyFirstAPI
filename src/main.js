@@ -21,6 +21,8 @@ async function A_PostFetch(){
     const global_Array_X = []
     const global_Array_Y = []
     const opcion= document.getElementById('Title-Select').innerText;
+    document.getElementById('B-Calcular').style.backgroundColor= 'gray'
+    setTimeout(()=>{document.getElementById('B-Calcular').style.backgroundColor= 'white'}, 200)
     __Post(global_Array_X, global_Array_Y)
     const JSON_Request = [
         {
@@ -107,7 +109,6 @@ function Add_Plus(){
         __Plus(global_X)
     }
 }
-
 function __Minus(){
     const __Minus = document.getElementById('infuncion').querySelectorAll("#frag")
     document.getElementById('infuncion').removeChild(__Minus[0])
@@ -143,6 +144,8 @@ function __I_Post(Array){
 }
 async function I_PostFetch(){
     const Array = []
+    document.getElementById('B-Calcular').style.backgroundColor= 'gray'
+    setTimeout(()=>{document.getElementById('B-Calcular').style.backgroundColor= 'white'}, 200)
     __I_Post(Array)
     const JSON_Request = [{
         "funcion" : parseInt(Array.join('+')),
@@ -180,3 +183,74 @@ function I_Delete_Minus(){
 }
 
 // JS para Ecuaciones Diferenciales
+function __E_Post(Array_FunX, Array_FunY){
+    document.querySelector('#InFuncion-X').querySelector('#frag').querySelectorAll('input').forEach(input =>{
+        if(input.value == ''){
+            Array_FunX.push(parseInt(input.placeholder))
+        }else{
+            Array_FunX.push(parseInt(input.value))
+        }
+    })
+    document.querySelector('#InFuncion-Y').querySelector('#frag').querySelectorAll('input').forEach(input =>{
+        if(input.value == ''){
+            Array_FunY.push(parseInt(input.placeholder))
+        }else{
+            Array_FunY.push(parseInt(input.value))
+        }
+    })
+
+}
+function __Ei_Post(X_ini, Y_ini, N, H){
+
+}
+async function E_PostFetch(){
+    const Array_FunX = []
+    const Array_FunY = []
+    var X_ini='';var Y_ini='';var H='';var N='';
+    document.getElementById('B-Calcular').style.backgroundColor= 'gray'
+    setTimeout(()=>{document.getElementById('B-Calcular').style.backgroundColor= 'white'}, 200)
+
+    const Aux_X= document.querySelector('#Funcion-X').querySelectorAll('#invariables')
+    const Aux_Y= document.querySelector('#Funcion-Y').querySelectorAll('#invariables')
+
+    if(Aux_X[0].querySelector('input').value == ''){
+        X_ini = Aux_X[0].querySelector('input').placeholder
+    }else{
+        X_ini = Aux_X[0].querySelector('input').value
+    }
+
+    if(Aux_X[1].querySelector('input').value == ''){
+        N = Aux_X[1].querySelector('input').placeholder
+    }else{
+        N = Aux_X[1].querySelector('input').value
+    }
+
+    if(Aux_Y[0].querySelector('input').value == ''){
+        Y_ini = Aux_Y[0].querySelector('input').placeholder
+    }else{
+        Y_ini = Aux_Y[0].querySelector('input').value
+    }
+
+    if(Aux_Y[1].querySelector('input').value == ''){
+        H = Aux_Y[1].querySelector('input').placeholder
+    }else{
+        H = Aux_Y[1].querySelector('input').value
+    } 
+    __E_Post(Array_FunX, Array_FunY)
+    const JSON_Request = [{
+        "funcion-X" : Array_FunX,
+        "funcion-Y" : Array_FunY,
+        "X-inicial" : parseInt(X_ini),
+        "Y-inicial" : parseInt(Y_ini),
+        "N" : parseInt(N),
+        "H" : parseInt(H)
+    }]
+    const response = await fetch('http://127.0.0.1:8000/solucionEuacionI', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json;charset=utf-8'},
+        body: JSON.stringify(JSON_Request)
+    })
+
+    const resultado = await response.json()
+    console.log(resultado)
+}
