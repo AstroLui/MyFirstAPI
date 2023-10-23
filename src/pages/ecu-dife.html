@@ -18,7 +18,7 @@
             <span class="Form-Title">Ingreso</span>
             <div class="Form-Content">
                 <p>Ingrese valores en los campos requeridos que representan los coeficientes
-                    de X, Y y el valor de termino independiente. En caso de ser omitido se tomaran como
+                    de X, Y y demas variables. En caso de ser omitido se tomaran como
                     valor 1 para cada uno
                 </p>
             </div>
@@ -31,6 +31,14 @@
                             <input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/>
                         </div>
                     </div>
+                    <div id="variables">
+                        <div id="invariables">
+                            <span id="variable_Ecuacion">X inicial:</span><input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/>
+                        </div>
+                        <div id="invariables">
+                            <span id="variable_Ecuacion">n:</span><input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/>
+                        </div>
+                    </div>
                 </div>
                 <span id="Inter">+</span>
                 <div id="Funcion-Y">
@@ -41,10 +49,18 @@
                             <input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/>
                         </div>
                     </div>
+                    <div id="variables">
+                        <div id="invariables">
+                            <span id="variable_Ecuacion">Y inicial:</span><input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/>
+                        </div>
+                        <div id="invariables">
+                            <span id="variable_Ecuacion">h:</span><input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="Form-Calcular">
-                <button id="B-Calcular" class="B-Calcular" onclick="Calcular()">Calcular</button> 
+                <button id="B-Calcular" class="B-Calcular" onclick="E_PostFetch()">Calcular</button> 
             </div>
         </div>
         <div class="Astro-Result">
