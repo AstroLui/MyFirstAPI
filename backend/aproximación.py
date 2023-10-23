@@ -11,6 +11,8 @@ def imprimir(x,y,p):
     plt.title('Ajuste de mínimos cuadrados de una parábola')
     plt.xlabel('x')
     plt.ylabel('y')
+    root = plt.get_current_fig_manager().window
+    root.geometry("800x500+1000+400")
     plt.show()
 #Obtenemos los valores de los coeficientes a y b
 #Utilizando el metodo de los mínimos cuadrados
