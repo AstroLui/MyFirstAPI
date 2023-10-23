@@ -97,31 +97,37 @@ function Nav_Active(){
 }
 // JS para Ecuaciones de una sola variable
 var global_X = 1
-function __Plus(sup){
-    const old = document.getElementById('infuncion').innerHTML
-    document.getElementById('infuncion').innerHTML = `
-    <div id="frag"><input id="coeficiente" class="coeficiente" type="number" max="100" placeholder="1"/><span id="variable">X <sup>${sup}</sup> + </span></div>
-    ${old}`
+function __V_Post(Array, Array2){
+    const inputs = document.querySelector('#infuncion').querySelectorAll('div')
+    var x = 0
+    inputs.forEach(input => {
+        if(input.querySelector('input').value == ''){
+            Array.push(`x`)
+            Array2.push('inputs.length-x')
+            x = x + 1
+        }else{
+            Array.push(`${input.querySelector('input').value}x`)
+            Array2.push('inputs.length-x')
+            x = x + 1
+        }
+    })
 }
-function Add_Plus(){
-    if(global_X <=4){
-        global_X = global_X + 1
-        __Plus(global_X)
-    }
-}
-function __Minus(){
-    const __Minus = document.getElementById('infuncion').querySelectorAll("#frag")
-    document.getElementById('infuncion').removeChild(__Minus[0])
 
-}
-function Delete_Minus(){
-    if(global_X != 1){
-        __Minus()
-        global_X = global_X - 1
-    }
-}
-function __Calcular(){
-
+async function V_PostFetch(){
+    const Array = []
+    const ArrayExp = []
+    __V_Post(Array, ArrayExp)
+    const JSON_Request = [{
+        "coeficientes" : Array,
+        "exponente" : ArrayExp
+    }];
+    const response = await fetch('http://127.0.0.1:8000/solucionEcuacionV', {
+        method: 'POST',
+        headers:{'Content-type': 'application/json;charset=utf-8'},
+        body: JSON.stringify(JSON_Request)
+    })
+    const result = await response.json()
+    console.log(result)
 }
 function Calcular(){
     document.getElementById('B-Calcular').style.backgroundColor= 'gray'
