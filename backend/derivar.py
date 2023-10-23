@@ -5,21 +5,20 @@ from sympy import *
 import numpy as np
 import matplotlib.pyplot as plt
 
-def derivar(valor, i):
+def derivar(valor):
 
     x = symbols('x', integer = True) # definir simbolos en sympy de tipo entero
 
-    #Definir la funcion (se puede poner la funcion que sea)
-    valor = x**i
-
+    #Definir la funcion (se puede poner la funcion que sea
+    fu = valor
     #Hace la derivada de la funcion
-    derivada = diff(valor) #pasaselo a un label
+    derivada = diff(fu) #pasaselo a un label
 
     #Puntos en los que se ven la grafica de la integrsl (limite inferior grafica, limite maximo grafica, cantidad de ptos que tendra la funcion)
     puntos = np.linspace(-10, 10, 20)
 
     #Conversion de la funcion en una funcion que se puede evaluar (usada para los puntos)
-    f1 = lambdify(x, valor, 'numpy')
+    f1 = lambdify(x, fu, 'numpy')
 
     #Conversion de la derivada en una funcion que se pueda evaluar (usada para los puntos)
     f2 = lambdify(x, derivada, 'numpy')

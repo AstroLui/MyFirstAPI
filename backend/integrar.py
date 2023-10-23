@@ -10,9 +10,12 @@ def integral(valor):
 
     x = symbols('x') # definir simbolos en sympy de tipo entero
 
+    limite_inf = 1 #si quieres pon los valores desde los inputs
+    limite_sup = 5 #si quieres pon los valores desde los inputs
+
+    #Hace la integral de la funcion
+    integral = integrate(valor, x)
     #Hace la integral definida de la funcion
-    integral_definida = integrate(valor, x) #valores dentro de los limites calculados
-    #pasaselo al label
 
     #Puntos en los que se ven la grafica de la integral (limite inferior grafica, limite maximo grafica, cantidad de ptos que tendra la funcion)
     puntos = np.linspace(-10, 10, 5)
@@ -21,7 +24,7 @@ def integral(valor):
     f1 = lambdify(x, valor, 'numpy') 
 
     #Conversion de la derivada en una funcion numerica que se pueda evaluar (usada para los puntos)
-    f2 = lambdify(x, integral_definida, 'numpy')
+    f2 = lambdify(x, integral, 'numpy')
 
     #graficas
     nombre = [r'$f(x)$', r'$\int f(x) dx$']

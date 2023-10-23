@@ -39,8 +39,8 @@ async def A_Post(request: Request):
 async def I_Post(request: Request): 
     data = await request.json()
     funcion = data[0]["funcion"]
-    grado = data[0]["grado"]
     integral(funcion)
+    derivar(funcion)
     return data
 
 @app.post("/solucionEuacionI")

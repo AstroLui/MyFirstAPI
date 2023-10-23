@@ -128,7 +128,7 @@ function Calcular(){
     setTimeout(()=>{document.getElementById('B-Calcular').style.backgroundColor= 'white'}, 200)
 }
 // JS para Diferencion e integracion numerica
-var I_global_X = 1
+var I_global_X = 2
 function __I_Post(Array){
     const inputs = document.querySelector('#InFuncion').querySelectorAll('div')
     var x = 0
@@ -148,8 +148,7 @@ async function I_PostFetch(){
     setTimeout(()=>{document.getElementById('B-Calcular').style.backgroundColor= 'white'}, 200)
     __I_Post(Array)
     const JSON_Request = [{
-        "funcion" : Array.join('+'),
-        "grado" : Array.length,
+        "funcion" : Array.join('+')
     }];
     const response = await fetch('http://127.0.0.1:8000/solucionIntegral', {
         method: 'POST',
@@ -166,7 +165,7 @@ function __I_Plus(sup){
     ${old}`
 }
 function I_Add_Plus(){
-    if(I_global_X < 4){
+    if(I_global_X < 5){
        I_global_X = I_global_X + 1
         __I_Plus(I_global_X)
     }
@@ -176,7 +175,7 @@ function __I_Minus(){
     document.getElementById('InFuncion').removeChild(__Minus[0])
 }
 function I_Delete_Minus(){
-    if(I_global_X != 1){
+    if(I_global_X != 2){
         __I_Minus()
         I_global_X = I_global_X - 1
     }
